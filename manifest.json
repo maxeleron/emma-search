@@ -1,0 +1,28 @@
+{
+    "name": "emma-search",
+    "description": "Better search experience with Emma Search.",
+    "version": "0.1",
+    "permissions": [
+      "activeTab",
+      "webNavigation",
+      "tabs"
+    ],
+    "content_scripts": [
+        {
+        "matches": ["https://www.google.com/search*"],
+        "css": ["google/google-styles.css"],
+         "js": ["google/google-script.js"],
+         "run_at": "document_end"
+        },
+        {
+          "matches": ["https://yandex.ua/search/*", "https://yandex.ru/search/*"],
+          "css": ["yandex/yandex-styles.css"],
+          "js": ["yandex/yandex-script.js"],
+          "run_at": "document_end"
+        }
+       ],
+    "browser_action": {
+      "default_title": "Better search experience"
+    },
+    "manifest_version": 2
+  }
