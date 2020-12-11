@@ -1,7 +1,7 @@
 {
     "name": "emma-search",
     "description": "Better search experience with Emma Search.",
-    "version": "0.1",
+    "version": "0.2",
     "permissions": [
       "activeTab",
       "webNavigation",
@@ -22,7 +22,9 @@
         }
        ],
     "browser_action": {
-      "default_title": "Better search experience"
+      "default_title": "Better search experience",
+      "default_popup": "app/app.html",
+      "default_icon": "app/logo.png"
     },
     "manifest_version": 2
   }
