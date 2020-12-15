@@ -7,18 +7,35 @@
     <link rel="stylesheet" href="app.css">
   </head>
   <body>
-    <h1>Emma Search</h1>
-    <label for="presetSelect">Select SE page view:</label>
-    <select name="presetSelect" id="presetSelect">
-      <option value="none">None</option>
-      <option value="simplified">Simplified</option>
-      <option value="clean">Clean</option>
-      <option value="ultraclean">Ultra clean</option>
-    </select>
-
-    <!-- Increase text-size toggle -->
-
-    <!-- Enable hot-keys toggle -->
+    <!-- Header section -->
+    <header>
+      <h1>Emma Search</h1>
+      <select name="lang" id="extension lang" title="localization">
+        <option value="eng">US</option>
+        <option value="ru">RU</option>
+        <option value="ua">UA</option>
+      </select>
+    </header>
+    <!-- Main section: list of settings -->
+    <main>
+      <label for="presetSelect">Select SE page view:</label>
+      <select name="presetSelect" id="presetSelect">
+        <option value="none">None</option>
+        <option value="simplified">Simplified</option>
+        <option value="clean">Clean</option>
+        <option value="ultraclean">Ultra clean</option>
+      </select>
+  
+      <!-- Increase text-size toggle -->
+      <label for="textSizeToggle"><input name="textSizeToggle" type="checkbox">Increase text size</label>
+      
+      <!-- Enable hot-keys toggle (link for the existing hot keys will be added later)-->
+      <label for="hotKeysToggle"><input name="hotKeysToggle" type="checkbox">Enable <a href="">hot keys</a></label>    
+    </main>
+    <!-- Footer section: link to github and link for donations -->
+    <footer>
+      
+    </footer>
 
     <script src="app.js"></script>
   </body>

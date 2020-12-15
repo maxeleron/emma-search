@@ -1,56 +1,28 @@
 body{
     width: 250px;
     height: 400px;
-}
-/* Toggle */
-*
-{
-    user-select: none;
-    -webkit-tap-highlight-color:transparent;
+    border-radius: 20px;
+    font-size: 14px;
 }
 
-*:focus
-{
-    outline: none;
+label {
+    display: block;
 }
 
-.toggle-button-cover
-{
-    display: table-cell;
-    position: relative;
-    width: 200px;
-    height: 140px;
-    box-sizing: border-box;
-}
+/* select, option {
+    text-align: center;
+    text-align-last: center;    
+} */
 
-.button-cover
-{
-    height: 100px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px -8px #c5d6d6;
-    border-radius: 4px;
+select {
+    width:106px;
+    height:40px;
+    border:0;
+    background-color:#eee;
+    color:grey;
+    font-size:14px;
+    -webkit-appearance:none;
+    outline:none;
+    border-radius:0;
+    text-indent: 25%;
 }
-
-.button-cover:before
-{
-    counter-increment: button-counter;
-    content: counter(button-counter);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #d7e3e3;
-    font-size: 12px;
-    line-height: 1;
-    padding: 5px;
-}
-
-.button-cover, .knobs, .layer
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-

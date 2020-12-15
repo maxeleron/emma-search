@@ -23,6 +23,10 @@
     .organic__subtitle{
         display: none;
     }
+    /* moving search field to center */
+    .search2__input{
+        margin-left: 200px;
+    }
     
     .organic__content-wrapper{
         color: gray;
@@ -81,5 +85,9 @@
     
     .card__narrow{
         width: 400px;
+    }
+    /* removing "People also search" */
+    .related {
+        display: none;
     }
 }
