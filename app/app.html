@@ -10,16 +10,16 @@
     <!-- Header section -->
     <header>
       <h1>Emma Search</h1>
-      <select name="lang" id="extension lang" title="localization">
+      <!-- <select name="lang" id="extensionlang" title="localization">
         <option value="eng">US</option>
         <option value="ru">RU</option>
         <option value="ua">UA</option>
-      </select>
+      </select> -->
     </header>
     <!-- Main section: list of settings -->
-    <main>
+    <main id="settingsSection">
       <label for="presetSelect">Select SE page view:</label>
-      <select name="presetSelect" id="presetSelect">
+      <select id="presetSelect">
         <option value="none">None</option>
         <option value="simplified">Simplified</option>
         <option value="clean">Clean</option>
@@ -27,16 +27,26 @@
       </select>
   
       <!-- Increase text-size toggle -->
-      <label for="textSizeToggle"><input name="textSizeToggle" type="checkbox">Increase text size</label>
+      <label for="textSizeToggle"><input id="textSizeToggle" type="checkbox">Increase text size</label>
       
       <!-- Enable hot-keys toggle (link for the existing hot keys will be added later)-->
-      <label for="hotKeysToggle"><input name="hotKeysToggle" type="checkbox">Enable <a href="">hot keys</a></label>    
+      <label for="hotKeysToggle"><input id="hotKeysToggle" type="checkbox">Enable <a href="">hot keys</a></label>
+      
+      <!-- Auto expand cards such as 'movie information', 'celebrity bio', etc (link for what is card in SE will be added later)-->
+      <label for="expandCardsToggle"><input id="expandCardsToggle" type="checkbox">Auto expand <a href="#">cards</a></label> 
+
     </main>
     <!-- Footer section: link to github and link for donations -->
     <footer>
-      
+      <ul class="additional links">
+        <li><a href="https://github.com/maxeleron/emma-search" title="this project on GitHub">GitHub</a></li>
+        <li><a href="#" title="support the author">Support</a></li>
+        <li title="I've discovered a bug">
+          <a href='mailto:maxeleron@gmail.com?subject=Bug%20report:%20Emma%20Search'>🐞</a></li>
+      </ul>
     </footer>
 
     <script src="app.js"></script>
+    <script src="settings.js"></script>
   </body>
 </html>
