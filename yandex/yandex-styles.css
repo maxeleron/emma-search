@@ -4,8 +4,6 @@
     }
     .content__left{
         width: 900px !important;
-        color: red;
-        /* transform: scale(1.2) */
     }
     /*Hide unrequired statistics*/
     .serp-adv__found, .serp-header__nav{

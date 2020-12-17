@@ -1,62 +1,37 @@
-'use strict'
+function getSettingsObj() {
+  chrome.storage.sync.get('chosenPreset', ({chosenPreset})=>{
+    if(chosenPreset === undefined){
+      console.log('Hey, I am in if undefined');
+      //Restoring settings 
+      chrome.storage.sync.set({"chosenPreset": "simplified", "biggerText": true, "hotKeysEnabled": true, "expandEnabled": false}, (obj)=> obj);
 
-/* Settings (took from another my github repo)
-==================*/
-class Settings {
-    constructor() {
-      //if settings don`t ever saved, give settings to a user
-      if (!localStorage["emmaSearchSettingsObj"]) {
-        this.restoreDefaults();
-      }
-      //if there are local settings implement them to current game
-      else {
-        const { chosenPreset, biggerText, hotKeysEnabled, expandEnabled} = JSON.parse(
-          localStorage.getItem("emmaSearchSettingsObj")
-        );
-        this.chosenPreset = chosenPreset;
-        this.biggerText = biggerText;
-        this.hotKeysEnabled = hotKeysEnabled;
-        this.expandEnabled = expandEnabled;
-      }
+      // return {
+      //   "chosenPreset": "simplified", 
+      //   "biggerText": true, 
+      //   "hotKeysEnabled":true, 
+      //   "expandEnabled":false
+      // }
     }
-    save() {
-      localStorage.setItem("emmaSearchSettingsObj", JSON.stringify(this));
+  })
+  //if there are local settings implement them
+  chrome.storage.sync.get(["chosenPreset", "biggerText", "hotKeysEnabled", "expandEnabled"],
+    function(obj) {
+      let {chosenPreset, biggerText, hotKeysEnabled, expandEnabled} = obj;
+      console.log('Implementing existing settings settings are already set');      
+      console.log('Settings saved', chosenPreset);
+      console.table({chosenPreset, biggerText, hotKeysEnabled, expandEnabled});
+      // Notify that we saved.
+      return obj;
     }
-    restoreDefaults() {
-      this.chosenPreset = "simplified";
-      this.biggerText = true;
-      this.hotKeysEnabled = true;
-      this.expandEnabled = false;
-      this.save();
-    }
-  }
-  
-  //Local Settings Object
-  let emmaSearchSettingsObj = new Settings();
-  
-  //Getting settings ui elements
-  const settingsSection = document.getElementById("settingsSection");
-  
-  //Settings ui elements
-  const presetSelect = document.getElementById("presetSelect");
-  const textSizeToggle = document.getElementById("textSizeToggle");
-  const hotKeysToggle = document.getElementById("hotKeysToggle");
-  const expandCardsToggle = document.getElementById("expandCardsToggle");
-  
-  // Setting ui elements up to date with emmaSearchSettingsObj
-  presetSelect.value = emmaSearchSettingsObj.chosenPreset;
-  textSizeToggle.checked = emmaSearchSettingsObj.biggerText;
-  hotKeysToggle.checked = emmaSearchSettingsObj.hotKeysEnabled;
-  expandCardsToggle.checked = emmaSearchSettingsObj.expandEnabled;
+  );
+}
 
-  settingsSection.addEventListener("change", () => {
-    emmaSearchSettingsObj.chosenPreset = presetSelect.value;
-    emmaSearchSettingsObj.biggerText = textSizeToggle.checked;
-    emmaSearchSettingsObj.hotKeysEnabled = hotKeysToggle.checked;
-    emmaSearchSettingsObj.expandEnabled = expandCardsToggle.checked;
+
+function save(newPreset, newText, newKeys, newExpand) {
+  chrome.storage.sync.set({"chosenPreset": newPreset, "biggerText": newText, "hotKeysEnabled": newKeys, "expandEnabled": newExpand}, ()=>{});
   
-    emmaSearchSettingsObj.save();
-  });
-  /*==============
-  end:Settings*/
-  
+  // Notify that we saved.
+  console.log('Settings Saved');
+}
+
+getSettingsObj()

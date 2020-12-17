@@ -3,7 +3,8 @@
   "description": "Better search experience with Emma Search.",
   "version": "0.2.1",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "content_scripts": [
     {
@@ -15,7 +16,7 @@
     {
       "matches": ["https://yandex.ua/search/*", "https://yandex.ru/search/*"],
       "css": ["yandex/yandex-styles.css"],
-      "js": ["yandex/yandex-script.js"],
+      "js": ["app/settings.js","yandex/yandex-script.js"],
       "run_at": "document_end"
     }
   ],
