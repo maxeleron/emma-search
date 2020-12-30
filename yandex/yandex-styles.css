@@ -1,12 +1,19 @@
 @media screen and (min-width: 1200px) and (orientation: landscape) {
-    #search-result{
+    
+    .serp-header__search2{
         margin-left: 200px;
+        font-size: 22px;
     }
+
+    /* #search-result{
+        margin-left: 300px;
+    } */
+    /* 
     .content__left{
         width: 900px !important;
     }
     /*Hide unrequired statistics*/
-    .serp-adv__found, .serp-header__nav{
+    /* .serp-adv__found, .serp-header__nav{
         display: none;
     }
     
@@ -20,48 +27,44 @@
     
     .organic__subtitle{
         display: none;
-    }
+    } */
     /* moving search field to center */
-    .search2__input{
+    /* .search2__input{
         margin-left: 200px;
+    }
+
+    #search-result-aside > div.serp-list.serp-list_right_yes.serp-list_complementary_yes > div{
+        display:none;
     }
     
     .organic__content-wrapper{
         color: gray;
-        /* display:none; */
-    }
+
+    } */
     
-    .serp-header__search2{
-        margin-left: 200px;
-        font-size: 22px;
-        /* transform: scale(1.3); */
-    }
+    /* 
     
     .input__settings{
         display: none;
     }
     
-    .user-account__name{
+    {
         display: none !important;
     }
     
     a{
         color: black;
-    }
+    } */
     
     /* Hide scroler at top */
-    .scroller__container{
+    /* .scroller__container{
         display: none;
     }
     
     .serp-footer{
         display: none;
-    }
-    
-    /*Hide footer*/
-    .serp-footer__main{
-        display: none;
-    }
+    } */
+    /*
     
     .main__content{
         overflow: hidden;
@@ -83,9 +86,5 @@
     
     .card__narrow{
         width: 400px;
-    }
-    /* removing "People also search" */
-    .related {
-        display: none;
-    }
+    } */
 }
