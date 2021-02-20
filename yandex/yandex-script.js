@@ -46,8 +46,6 @@ function enableHotKeys(){
   //window.addEventListener();
 }
 
-
-
 //Implement user settings
 chrome.storage.sync.get(["chosenPreset", "biggerText", "hotKeysEnabled", "expandEnabled"],
   ({chosenPreset, biggerText, hotKeysEnabled, expandEnabled}) => {
